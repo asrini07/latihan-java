@@ -9,6 +9,7 @@ import com.example.latihanjava.exeption.ResourceNotFoundException;
 import com.example.latihanjava.model.Note;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -62,7 +63,8 @@ public class NoteController {
         Note note = noteRepository.findById(noteId).orElseThrow(() -> new ResourceNotFoundException("Note", "id", noteId));
 
         noteRepository.delete(note);
-        return ResponseEntity.ok().build();
+        //return ResponseEntity.ok().build();
+        return new ResponseEntity<>("Product is created successfully", HttpStatus.OK);
     }
 
     
