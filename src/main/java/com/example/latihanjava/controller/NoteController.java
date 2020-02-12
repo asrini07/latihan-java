@@ -52,6 +52,9 @@ public class NoteController {
         
         note.setTitle(noteDetails.getTitle());
         note.setContent(noteDetails.getContent());
+        note.setIdKategori(noteDetails.getIdKategori());
+        note.setImage(noteDetails.getImage());
+        note.setEmail(noteDetails.getEmail());
 
         Note updatedNote = noteRepository.save(note);
 

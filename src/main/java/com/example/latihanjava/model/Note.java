@@ -36,6 +36,14 @@ public class Note{
     @NotBlank
     private String content;
 
+    @NotBlank
+    private String email;
+
+    @NotBlank
+    private String image;
+
+    private Integer id_kategori;
+
     @Column(nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     @CreatedDate
@@ -68,6 +76,30 @@ public class Note{
 
     public void setContent(String content){
         this.content = content;
+    }
+
+    public void setEmail(String email){
+        this.email = email;
+    }
+
+    public void setIdKategori(Integer id_kategori){
+        this.id_kategori = id_kategori;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Integer getIdKategori() {
+        return id_kategori;
+    }
+
+    public String getImage(){
+        return image;
     }
 
     public Date getCreatedAt() {
